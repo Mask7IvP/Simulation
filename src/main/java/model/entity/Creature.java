@@ -5,10 +5,7 @@ import model.Coordinates;
 public abstract class Creature extends Entity {
     int speed;
     int health;
-    abstract void makeMove();
+    public abstract void makeMove(Coordinates coordinates);
 
-    public Creature(Coordinates coordinates) {
-        super(coordinates);
 
-    }
 }

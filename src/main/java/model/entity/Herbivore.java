@@ -3,14 +3,13 @@ package model.entity;
 import model.Coordinates;
 
 public class Herbivore extends Creature {
-    public Herbivore(Coordinates coordinates) {
-        super(coordinates);
+    public Herbivore() {
         speed = 2;
         health = 10;
     }
 
     @Override
-    void makeMove() {
+    public void makeMove(Coordinates coordinates) {
 //        1. получить координаты row и column из карты
 //        ПОИСК в ШИРИНУ:
 //        2. if ((row - 1) >= 0 || (column - 1) < 5) {

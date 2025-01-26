@@ -1,6 +1,8 @@
 package view;
+
 import model.*;
 import model.entity.*;
+
 
 public class ConsoleMapRenderer implements View {
     public static final String GRASS_SPRITE = "🌿";
@@ -20,16 +22,16 @@ public class ConsoleMapRenderer implements View {
             for (int column = 0; column <= 4; column++) {
                 Coordinates coordinates = new Coordinates(row, column);
                 if (playingMap.getEntities().containsKey(coordinates)) {
-                    if (playingMap.getEntities().get(coordinates) instanceof Grass) {
+                    Entity entity = playingMap.getEntities().get(coordinates);
+                    if (entity instanceof Grass) {
                         System.out.print(GRASS_SPRITE);
-                    } else if (playingMap.getEntities().get(coordinates) instanceof Herbivore) {
+                    } else if (entity instanceof Herbivore) {
                         System.out.print(HERBIVORE_SPRITE);
-                    } else if (playingMap.getEntities().get(coordinates) instanceof Predator) {
+                    } else if (entity instanceof Predator) {
                         System.out.print(PREDATOR_SPRITE);
-                    }
-                    else if (playingMap.getEntities().get(coordinates) instanceof Rock) {
+                    } else if (entity instanceof Rock) {
                         System.out.print(ROCK_SPRITE);
-                    } else if (playingMap.getEntities().get(coordinates) instanceof Tree) {
+                    } else if (entity instanceof Tree) {
                         System.out.print(TREE_SPRITE);
                     }
                 } else {
@@ -39,4 +41,4 @@ public class ConsoleMapRenderer implements View {
         }
     }
 }
-    //отвечает за визуализацию состояния поля, его отрисовку
+//отвечает за визуализацию состояния поля, его отрисовку
