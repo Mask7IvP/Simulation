@@ -31,7 +31,7 @@ public class Actions {
         for (Coordinates coordinates : playingMap.getEntities().keySet()) {
             Entity entity = playingMap.getEntities().get(coordinates);
             if (entity instanceof Creature) {
-                ((Creature) entity).makeMove(coordinates);
+                ((Creature) entity).makeMove(coordinates, playingMap);
             }
         }
     }
